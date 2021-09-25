@@ -9,13 +9,15 @@ import org.springframework.web.bind.annotation.RestController;
 import com.practice.greetingslist.model.Greetings;
 
 @RestController
+@RequestMapping("/greeting")
 public class GreetingController {
 	
-	@RequestMapping("/greeting")
+	@RequestMapping("/jSon")
 	public List<Greetings> getGreetings(){
 		return Arrays.asList(
 				new Greetings("Sagarika","Shinde"),
 				new Greetings("Saniya","Bhonde")
 						);
 	}
+	
 }
