@@ -57,7 +57,17 @@ public class GreetingService implements GreetingInterface{
 		return greetings;
 	}
 
+	@Override
+	public Greetings deleteGreeting(long id) {
+		Greetings g=null;
+		for(Greetings greet : greetingList) {
+			if(greet.getId()==id) {
+				g=greet;
+				greetingList.remove(g);
+				break;
+			}
+		}
+		return g;
 
-
-
+	}
 }

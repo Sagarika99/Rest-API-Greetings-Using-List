@@ -57,4 +57,10 @@ public class GreetingController {
 	public Greetings editGreeting(@PathVariable String id, @RequestBody Greetings greetings) {
 		return this.greetingList.editGreeting(Long.parseLong(id),greetings); 
 	}
+	
+	@GetMapping("/deleteGreeting/{id}")
+	public Greetings deleteGreeting(@PathVariable String id) {
+		return this.greetingList.deleteGreeting(Long.parseLong(id));
+	}
+	
 }

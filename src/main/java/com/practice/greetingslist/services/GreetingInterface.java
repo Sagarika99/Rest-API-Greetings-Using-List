@@ -14,4 +14,6 @@ public interface GreetingInterface {
 
 	public Greetings editGreeting(long parseLong, Greetings greetings);
 
+	public Greetings deleteGreeting(long parseLong);
+
 }
