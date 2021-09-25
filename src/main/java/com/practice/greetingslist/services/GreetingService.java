@@ -16,11 +16,25 @@ public class GreetingService implements GreetingInterface{
 		greetingList = new ArrayList<>();
 		greetingList.add(new Greetings(1,"Sagarika","Shinde"));
 		greetingList.add(new Greetings(2,"Saniya","Bhonde"));
+		greetingList.add(new Greetings(3,"Meghana","Gupta"));
+		
 	}
 	
 	@Override
 	public List<Greetings> getGreeting(){
 		return greetingList;
+	}
+
+	@Override
+	public Greetings getCourseById(long id) {
+		Greetings g=null;
+		for(Greetings greet : greetingList) {
+			if(greet.getId()==id) {
+				g=greet;
+				break;
+			}
+		}
+		return g;
 	}
 
 
