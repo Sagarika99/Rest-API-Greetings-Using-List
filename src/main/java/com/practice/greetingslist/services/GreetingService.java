@@ -37,6 +37,12 @@ public class GreetingService implements GreetingInterface{
 		return g;
 	}
 
+	@Override
+	public Greetings addGreeting(Greetings greetings) {
+		greetingList.add(greetings);
+		return greetings;
+	}
+
 
 
 

@@ -9,4 +9,7 @@ public interface GreetingInterface {
 	public List<Greetings> getGreeting();
 
 	public Greetings getCourseById(long id);
+
+	public Greetings addGreeting(Greetings greetings);
+
 }
