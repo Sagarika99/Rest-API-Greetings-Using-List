@@ -2,12 +2,14 @@ package com.practice.greetingslist.model;
 
 public class Greetings {
 
+	private long id;
 	private String firstName;
 	private String lastName;
 	
-	public Greetings(String firstName, String lastName) {
+	public Greetings(long id,String firstName, String lastName) {
 		this.firstName = firstName;
 		this.lastName = lastName;
+		this.id = id;
 	}
 	
 	public String getFirstName() {
@@ -23,9 +25,18 @@ public class Greetings {
 		this.lastName = lastName;
 	}
 
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
 	@Override
 	public String toString() {
-		return "Greetings [firstName=" + firstName + ", lastName=" + lastName + "]";
+		return "Greetings [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + "]";
 	}
+	
 	
 }

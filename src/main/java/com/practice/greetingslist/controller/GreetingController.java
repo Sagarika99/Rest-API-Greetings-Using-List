@@ -1,24 +1,30 @@
 package com.practice.greetingslist.controller;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.practice.greetingslist.model.Greetings;
+import com.practice.greetingslist.services.GreetingInterface;
 
 @RestController
 @RequestMapping("/greeting")
 public class GreetingController {
 	
+	@Autowired
+	private GreetingInterface greetingList;	
+	
 	@RequestMapping("/jSon")
-	public List<Greetings> getGreetings(){
+	public List<Greetings> addGreetings(){
 		return Arrays.asList(
-				new Greetings("Sagarika","Shinde"),
-				new Greetings("Saniya","Bhonde")
+				new Greetings(1,"Sagarika","Shinde"),
+				new Greetings(2,"Saniya","Bhonde")
 						);
 	}
 	
@@ -26,5 +32,10 @@ public class GreetingController {
 	public String sayHello(@RequestParam(value = "firstName") String firstName,
 			@RequestParam(value = "lastName") String lastName) {
 		return "Hello " + firstName + " " + lastName + "!";
+	}
+	
+	@GetMapping("/sayHello")
+	public List<Greetings> getGreeting() {
+		return this.greetingList.getGreeting();
 	}
 }
