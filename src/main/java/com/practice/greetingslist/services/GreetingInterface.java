@@ -12,4 +12,6 @@ public interface GreetingInterface {
 
 	public Greetings addGreeting(Greetings greetings);
 
+	public Greetings editGreeting(long parseLong, Greetings greetings);
+
 }

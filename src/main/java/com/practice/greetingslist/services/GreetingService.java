@@ -43,6 +43,20 @@ public class GreetingService implements GreetingInterface{
 		return greetings;
 	}
 
+	@Override
+	public Greetings editGreeting(long id, Greetings greetings) {
+		Greetings g=null;
+		for(Greetings greet : greetingList) {
+			if(greet.getId()==id) {
+				g=greet;
+				g.setFirstName(greetings.getFirstName());
+				g.setLastName(greetings.getLastName());
+				break;
+			}
+		}
+		return greetings;
+	}
+
 
 
 
